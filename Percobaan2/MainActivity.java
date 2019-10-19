@@ -12,23 +12,42 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.Style;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
-(1)
+import com.mapbox.android.core.permissions. ............(1) ;
+import com.mapbox.android.core.permissions. ............(2) ;
+import com.mapbox.mapboxsdk.location. ............(3) ;
+import com.mapbox.mapboxsdk.location.modes. ............(4) ;
 
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, PermissionsListener {
-    
-    (2)
+        
+    private MapView ............(5) ;
+    private MapboxMap ............(6) ;
+
+    private PermissionsManager ............(7) ;
+    private LocationComponent ............(8) ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        (3)
+        super.onCreate(savedInstanceState);
+        Mapbox.getInstance(this, getString( ............(9) ));
+        setContentView(R.layout.activity_main);
+        mapView = findViewById( ............(10) );
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(this);
     }
 
     @Override
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
-        (4)
+        this.mapboxMap = ............(11) ;
+        mapboxMap.setStyle(getString(R.string. ............(12) ), 
+        new Style.OnStyleLoaded() {
+            @Override
+            public void onStyleLoaded(@NonNull Style style) {
+                ............(13)(style);
+            }
+        });
     }
 
     @SuppressWarnings( {"MissingPermission"})
