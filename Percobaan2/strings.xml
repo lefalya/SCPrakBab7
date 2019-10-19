@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MapBoxLBSPart1.5</string>
+    <string name="access_token">pk.eyJ1IjoibGVmYWx5YSIsImEiOiJjazE1eXVrZmgwemUyM2J0anpkcjA3em1uIn0.JpX7Mh8Ndm5vo5yQy6RSQQ</string>
+    <string name="user_location_permission_explanation">This app needs location permissions to show its functionality.</string>
+    <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
+</resources>
