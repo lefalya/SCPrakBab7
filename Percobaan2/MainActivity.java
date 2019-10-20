@@ -52,21 +52,38 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @SuppressWarnings( {"MissingPermission"})
     private void enableLocationComponent(@NonNull Style loadedMapStyle) {
-        (5)
+
+        if (PermissionsManager. ............(14) (this)) {
+
+            locationComponent = mapboxMap. ............(15) ();
+            locationComponent.activateLocationComponent(this,  ............(16) );
+            locationComponent.setLocationComponentEnabled(true);
+
+            locationComponent.setCameraMode( ............(17) );
+        } else {
+            permissionsManager = new ............(18) (this);
+            permissionsManager. ............(19) (this);
+        }
+        
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        (6)
+        permissionsManager.onRequestPermissionsResult (............(20) , ............(21), ............(22));
     }
 
     @Override
     public void onExplanationNeeded(List<String> permissionsToExplain) {
-        (7)
+        Toast.makeText(this, R.string.user_location_permission_explanation,Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onPermissionResult(boolean granted) {
-        (8)
+        if ( ............(23) ) {
+            enableLocationComponent(mapboxMap.getStyle());
+        } else {
+            Toast.makeText(this, R.string. ............(24) , Toast.LENGTH_LONG).show();
+            finish();
+        }
     }
 }
