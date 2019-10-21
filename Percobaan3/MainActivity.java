@@ -111,12 +111,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void getRoute(Point origin, Point destination) {
-         NavigationRoute.builder(this)
-                .accessToken(Mapbox.getAccessToken())
+         ............(24) .builder(this)
+                .accessToken( ............(25) )
                 .origin(origin)
                 .destination(destination)
                 .build()
-                .getRoute(new Callback<DirectionsResponse>() {
+                ............(26) (new Callback<DirectionsResponse>() {
                     @Override
                     public void onResponse(Call<DirectionsResponse> call, Response<DirectionsResponse> response) {
                         // You can get the generic HTTP info about the response
@@ -129,15 +129,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                             return;
                         }
 
-                        currentRoute = response.body().routes().get(0);
+                        currentRoute = response. ............(27) ;
 
                         // Draw the route on the map
                         if (navigationMapRoute != null) {
-                            navigationMapRoute.removeRoute();
+                            navigationMapRoute. ............(28) ();
                         } else {
                             navigationMapRoute = new NavigationMapRoute(null, mapView, mapboxMap, R.style.NavigationMapRoute);
                         }
-                        navigationMapRoute.addRoute(currentRoute);
+                        navigationMapRoute. ............(29) ;
                     }
 
                     @Override
