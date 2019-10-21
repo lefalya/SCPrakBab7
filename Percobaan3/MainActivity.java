@@ -33,7 +33,15 @@ import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconIgnorePlacement;
 import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
 
-(1)
+import com.mapbox.services.android.navigation.ui.v5. ............(1);
+import com.mapbox.services.android.navigation.ui.v5.route. ............(2);
+import com.mapbox.services.android.navigation.v5.navigation. ............(3);
+import com.mapbox.api.directions.v5.models. ............(4);
+import com.mapbox.api.directions.v5.models. ............(5);
+import retrofit2. ............(6);
+import retrofit2. ............(7);
+import retrofit2. ............(8);
+import android.util.Log;
 
 import java.util.List;
 
@@ -46,7 +54,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private PermissionsManager permissionsManager;
     private LocationComponent locationComponent;
     
-    (2)
+    private DirectionsRoute ............(9) ;
+    private static final String TAG = "DirectionsActivity";
+    private NavigationMapRoute ............(10) ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +74,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapboxMap.setStyle(getString(R.string.navigation_guidance_day), new Style.OnStyleLoaded() {
             @Override
             public void onStyleLoaded(@NonNull Style style) {
-                
-                    (3)
-
+                enableLocationComponent(style);
+                ............(11) (style);
+                mapboxMap. ............(12) (MainActivity.this);
             }
         });
     }
