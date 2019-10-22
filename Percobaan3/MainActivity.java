@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                             return;
                         }
 
-                        currentRoute = response. ............(27) ;
+                        currentRoute = response.body().routes().get(0);
 
                         // Draw the route on the map
                         if (navigationMapRoute != null) {
