@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 });
 
                 mapboxMap. ........(6) (new MarkerOptions()
-                        .position(new .........( (7) )
-                        .title( .........(8) );
+                        .position(new .........(7) )
+                        .title( .........(8) ));
             }
         });
     }
