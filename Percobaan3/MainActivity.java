@@ -133,11 +133,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                         // Draw the route on the map
                         if (navigationMapRoute != null) {
-                            navigationMapRoute. ............(28) ();
+                            navigationMapRoute. ............(27) ();
                         } else {
                             navigationMapRoute = new NavigationMapRoute(null, mapView, mapboxMap, R.style.NavigationMapRoute);
                         }
-                        navigationMapRoute. ............(29) ;
+                        navigationMapRoute. ............(28) ;
                     }
 
                     @Override
