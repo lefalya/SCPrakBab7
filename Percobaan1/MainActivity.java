@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         mapView = (MapView) findViewById( .........(3) );
         mapView.onCreate(savedInstanceState);
 
-        mapView.getMapAsync(new OnMapReadyCallback {
+        mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(@NonNull MapboxMap mapboxMap) {
 
